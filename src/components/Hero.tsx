@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'phosphor-react';
+import SplineCharacter from './SplineCharacter';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,7 +75,14 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      {/* Spline Character as background, full hero */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <SplineCharacter />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 w-full h-full bg-black/50 z-10 pointer-events-none" />
+      </div>
+
+      <div className="relative z-20 container mx-auto px-6 text-center flex flex-col items-center justify-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <h1 
             ref={headlineRef}

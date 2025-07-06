@@ -63,9 +63,9 @@ const Portfolio = () => {
           <Career />
           <Services />
           <SocialMediaCampaigns />
-          <Testimonials />
           <SkillsCloud />
           <Projects />
+          <Testimonials />
           <Contact />
         </main>
         <Footer />
