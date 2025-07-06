@@ -42,6 +42,16 @@ const Career = () => {
       details: "Current",
       description: "Working on full-stack development projects, implementing innovative solutions and maintaining high code quality.",
       type: "experience"
+    },
+    {
+      id: 4,
+      icon: <Briefcase size={32} />,
+      title: "Freelance Social Media Expert",
+      role: "Social Media Strategist",
+      period: "2023 - Present",
+      details: "Ongoing",
+      description: "Helping businesses grow through strategic social media marketing, content creation, and trend analysis across multiple platforms.",
+      type: "experience"
     }
   ];
 
@@ -127,7 +137,7 @@ const Career = () => {
           <h2 className="text-5xl font-bold">My <span className="gradient-text">Journey</span></h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full mx-auto" />
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From education to professional experience, here's my career progression
+            From education to professional experience in web development and social media marketing, here's my career progression
           </p>
         </div>
         <div ref={timelineRef} className="relative max-w-4xl mx-auto">

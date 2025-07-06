@@ -77,7 +77,9 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: <LinkedinLogo size={24} />, href: 'https://www.linkedin.com/in/jivan-satapathy/', label: 'LinkedIn' },
-    { icon: <InstagramLogo size={24} />, href: 'https://www.instagram.com/jivan__satapathy/', label: 'Instagram' }
+    { icon: <InstagramLogo size={24} />, href: 'https://www.instagram.com/jivan__satapathy/', label: 'Instagram' },
+    { icon: <InstagramLogo size={24} />, href: '#', label: 'TikTok' },
+    { icon: <LinkedinLogo size={24} />, href: '#', label: 'Facebook' }
   ];
 
   return (
@@ -93,7 +95,7 @@ const Contact = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full mx-auto" />
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your next project
+            Ready to bring your ideas to life or grow your business? Let's discuss your next web project or social media strategy
           </p>
         </div>
 

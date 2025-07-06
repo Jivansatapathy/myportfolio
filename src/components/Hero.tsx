@@ -84,7 +84,7 @@ const Hero = () => {
             <span className="gradient-text">Jivan</span>
             <br />
             <span className="text-4xl md:text-6xl text-muted-foreground">
-              Web Developer
+              Web Developer & Social Media Expert
             </span>
           </h1>
           
@@ -92,8 +92,8 @@ const Hero = () => {
             ref={subtitleRef}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            Crafting immersive digital experiences with cutting-edge technology 
-            and creative innovation
+            Crafting immersive digital experiences and driving business growth through 
+            cutting-edge web development and strategic social media marketing
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

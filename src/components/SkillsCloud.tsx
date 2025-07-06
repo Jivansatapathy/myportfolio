@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 
 interface Skill {
   name: string;
-  category: 'frontend' | 'backend' | 'tools' | 'database' | 'other';
+  category: 'frontend' | 'backend' | 'tools' | 'database' | 'social-media' | 'other';
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   icon?: string;
 }
@@ -36,6 +36,14 @@ const skills: Skill[] = [
   { name: 'Vite', category: 'tools', level: 'intermediate' },
   { name: 'Webpack', category: 'tools', level: 'intermediate' },
   { name: 'WordPress', category: 'tools', level: 'intermediate' },
+  { name: 'Instagram Marketing', category: 'social-media', level: 'advanced' },
+  { name: 'Facebook Ads', category: 'social-media', level: 'advanced' },
+  { name: 'Meta Ads', category: 'social-media', level: 'advanced' },
+  { name: 'LinkedIn Marketing', category: 'social-media', level: 'intermediate' },
+  { name: 'Content Creation', category: 'social-media', level: 'advanced' },
+  { name: 'Social Media Analytics', category: 'social-media', level: 'intermediate' },
+  { name: 'Trend Analysis', category: 'social-media', level: 'advanced' },
+  { name: 'Community Management', category: 'social-media', level: 'intermediate' },
   { name: 'Responsive Design', category: 'other', level: 'advanced' },
   { name: 'UI/UX Design', category: 'other', level: 'intermediate' },
   { name: 'Agile', category: 'other', level: 'intermediate' },
@@ -49,6 +57,7 @@ const getCategoryColor = (category: string) => {
     case 'backend': return 'from-green-400 to-emerald-400';
     case 'database': return 'from-purple-400 to-pink-400';
     case 'tools': return 'from-orange-400 to-red-400';
+    case 'social-media': return 'from-pink-400 to-purple-400';
     case 'other': return 'from-indigo-400 to-blue-400';
     default: return 'from-gray-400 to-gray-600';
   }

@@ -104,7 +104,10 @@ const About = () => {
     { icon: <Database size={24} />, name: 'Node.js', color: 'text-emerald-400' },
     { icon: <Gear size={24} />, name: 'TypeScript', color: 'text-blue-600' },
     { icon: <Globe size={24} />, name: 'Next.js', color: 'text-white' },
-    { icon: <Globe size={24} />, name: 'WordPress', color: 'text-blue-500' }
+    { icon: <Globe size={24} />, name: 'WordPress', color: 'text-blue-500' },
+    { icon: <Globe size={24} />, name: 'Social Media Strategy', color: 'text-pink-400' },
+    { icon: <Globe size={24} />, name: 'Content Marketing', color: 'text-purple-400' },
+    { icon: <Globe size={24} />, name: 'Trend Analysis', color: 'text-indigo-400' }
   ];
 
   return (
@@ -147,17 +150,21 @@ const About = () => {
             
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I'm a passionate web developer with a love for creating immersive digital experiences. 
-                My journey in tech started with curiosity and has evolved into a mission to push the 
-                boundaries of what's possible on the web.
+                I'm a passionate web developer and social media expert with a love for creating immersive 
+                digital experiences and driving business growth. My journey in tech started with curiosity 
+                and has evolved into a mission to push the boundaries of what's possible both on the web 
+                and across social media platforms.
               </p>
               <p>
-                Specializing in modern frontend technologies, I craft responsive, performant, and 
-                visually stunning applications that not only look great but deliver exceptional user experiences.
+                Specializing in modern frontend technologies and strategic social media marketing, I craft 
+                responsive, performant websites and develop comprehensive social media strategies that not 
+                only look great but deliver exceptional user experiences and measurable business results.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring the latest web technologies, contributing 
-                to open-source projects, or sharing knowledge with the developer community.
+                As a social media expert, I help businesses leverage trending strategies, create engaging 
+                content, and build meaningful connections with their audience across all major platforms. 
+                When I'm not coding or strategizing, you'll find me exploring the latest web technologies, 
+                analyzing social media trends, or sharing knowledge with the digital community.
               </p>
             </div>
 

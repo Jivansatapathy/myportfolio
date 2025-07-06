@@ -3,6 +3,21 @@ import { gsap } from 'gsap';
 
 const testimonials = [
   {
+    quote: "Jivan's 3-month social media campaign for Stories Per Pixel was a game-changer! Our followers grew by 150% and sales increased by 30% across Instagram, Facebook, and LinkedIn. His creative content and multi-platform strategy brought us new clients and industry recognition.",
+    name: "Stories Per Pixel",
+    role: "VFX Services Company"
+  },
+  {
+    quote: "Jivan's 6-month campaign for Hyderabad Travel Diaries was phenomenal! We saw a 250% increase in followers and a 50% boost in sales. His travel content and destination marketing brought us incredible exposure and bookings. Highly recommend!",
+    name: "Hyderabad Travel Diaries",
+    role: "Travel & Tourism Business"
+  },
+  {
+    quote: "The Social Pot's Instagram presence exploded thanks to Jivan! In 6 months, our followers grew by 180% and sales by 60%. His food content and community engagement strategy brought us loyal customers and a vibrant online community.",
+    name: "The Social Pot",
+    role: "Food & Beverages Business"
+  },
+  {
     quote: "Jivan designed a visually stunning portfolio site for me and was always available for updates. He stayed within my budget and was patient with every tweak. I’m really happy with the outcome and would definitely work with him again!",
     name: "Hetansa Rajkotia",
     role: "Owner"
@@ -11,11 +26,6 @@ const testimonials = [
     quote: "Working with Jivan on our company website, Bsquareglobalfze.com, was a great experience. He understood our needs clearly and delivered the site well within our budget range. Every service we requested was implemented without delays, and he made changes promptly whenever needed. His support throughout the process made everything smooth and stress-free. I highly recommend him for professional and reliable web development.",
     name: "Mihan Babu",
     role: "Bsquareglobal"
-  },
-  {
-    quote: "Jivan was incredibly supportive throughout the website development. He worked within my budget and ensured every detail was just right.",
-    name: "Jigna Shah",
-    role: "The Strivox"
   },
   {
     quote: "Jivan did an excellent job developing our website, Dahibraaexpress.com. He understood the look and feel we wanted for our food brand and built it within our budget and timeframe. His quick turnaround on requested changes and continuous support made the process really easy. The site turned out exactly how we wanted, and we’ve already received positive feedback from our customers. Highly recommended!",

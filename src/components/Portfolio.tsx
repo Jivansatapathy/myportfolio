@@ -7,6 +7,9 @@ import Navigation from './Navigation';
 import Hero from './Hero';
 import About from './About';
 import Career from './Career';
+import Services from './Services';
+import SocialMediaProjects from './SocialMediaProjects';
+import SocialMediaCampaigns from './SocialMediaCampaigns';
 import Testimonials from './Testimonials';
 import SkillsCloud from './SkillsCloud';
 import Projects from './Projects';
@@ -58,6 +61,8 @@ const Portfolio = () => {
           <Hero />
           <About />
           <Career />
+          <Services />
+          <SocialMediaCampaigns />
           <Testimonials />
           <SkillsCloud />
           <Projects />

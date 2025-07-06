@@ -153,7 +153,7 @@ const Projects = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full mx-auto" />
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my recent work, featuring cutting-edge technologies and innovative solutions
+            A showcase of my recent work, featuring cutting-edge web technologies and strategic social media campaigns that drive business growth
           </p>
         </div>
 
@@ -204,6 +204,9 @@ const Projects = () => {
                   {/* Title & Description */}
                   <h3 className="text-2xl font-bold mb-2 gradient-text">{project.title}</h3>
                   <p className="text-base text-muted-foreground mb-4">{project.description}</p>
+                  
+
+                  
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
