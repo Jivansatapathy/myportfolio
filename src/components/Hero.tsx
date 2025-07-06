@@ -10,7 +10,6 @@ const Hero = () => {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLButtonElement>(null);
-  const splineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.5 });
@@ -20,12 +19,6 @@ const Hero = () => {
       opacity: 0,
       y: 50,
       filter: 'blur(10px)'
-    });
-
-    gsap.set(splineRef.current, {
-      opacity: 0,
-      x: 100,
-      scale: 0.8
     });
 
     // Animation sequence
@@ -49,14 +42,7 @@ const Hero = () => {
       filter: 'blur(0px)',
       duration: 0.8,
       ease: "power3.out"
-    }, "-=0.6")
-    .to(splineRef.current, {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      duration: 1.5,
-      ease: "power3.out"
-    }, "-=1");
+    }, "-=0.6");
 
     // Floating orbs animation
     gsap.to('.floating-orb', {
@@ -88,20 +74,6 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* 3D Spline Background */}
-      <div 
-        ref={splineRef}
-        className="absolute inset-0 w-full h-full"
-      >
-        <iframe 
-          src="https://my.spline.design/robotfollowcursorforlandingpage-aZNPGXFplWvcoOda1rpgcbIJ/" 
-          frameBorder="0" 
-          width="100%" 
-          height="100%"
-          className="opacity-60"
-        />
-      </div>
-
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <h1 
