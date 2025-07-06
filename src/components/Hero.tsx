@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'phosphor-react';
@@ -6,23 +6,57 @@ import SplineCharacter from './SplineCharacter';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const typewriterPhrases = [
+  'Web Developer',
+  'Social Media Expert',
+];
+
+const TYPING_SPEED = 80; // ms per character
+const DELETING_SPEED = 40; // ms per character
+const PAUSE_AFTER_TYPING = 1200; // ms
+const PAUSE_AFTER_DELETING = 400; // ms
+
 const Hero = () => {
   const heroRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLButtonElement>(null);
 
+  // Typewriter animation state
+  const [typeIndex, setTypeIndex] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    const currentPhrase = typewriterPhrases[typeIndex];
+
+    if (!isDeleting && displayed.length < currentPhrase.length) {
+      timeout = setTimeout(() => {
+        setDisplayed(currentPhrase.slice(0, displayed.length + 1));
+      }, TYPING_SPEED);
+    } else if (!isDeleting && displayed.length === currentPhrase.length) {
+      timeout = setTimeout(() => setIsDeleting(true), PAUSE_AFTER_TYPING);
+    } else if (isDeleting && displayed.length > 0) {
+      timeout = setTimeout(() => {
+        setDisplayed(currentPhrase.slice(0, displayed.length - 1));
+      }, DELETING_SPEED);
+    } else if (isDeleting && displayed.length === 0) {
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setTypeIndex((prev) => (prev + 1) % typewriterPhrases.length);
+      }, PAUSE_AFTER_DELETING);
+    }
+    return () => clearTimeout(timeout);
+  }, [displayed, isDeleting, typeIndex]);
+
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.5 });
-
-    // Initial setup
     gsap.set([headlineRef.current, subtitleRef.current, ctaRef.current], {
       opacity: 0,
       y: 50,
       filter: 'blur(10px)'
     });
-
-    // Animation sequence
     tl.to(headlineRef.current, {
       opacity: 1,
       y: 0,
@@ -44,8 +78,6 @@ const Hero = () => {
       duration: 0.8,
       ease: "power3.out"
     }, "-=0.6");
-
-    // Floating orbs animation
     gsap.to('.floating-orb', {
       y: -20,
       duration: 3,
@@ -54,8 +86,6 @@ const Hero = () => {
       ease: "power1.inOut",
       stagger: 0.5
     });
-
-    // CTA button pulse effect
     gsap.to(ctaRef.current, {
       scale: 1.05,
       duration: 2,
@@ -63,7 +93,6 @@ const Hero = () => {
       yoyo: true,
       ease: "power2.inOut"
     });
-
     return () => {
       tl.kill();
     };
@@ -91,8 +120,9 @@ const Hero = () => {
             Hi, I'm{' '}
             <span className="gradient-text">Jivan</span>
             <br />
-            <span className="text-4xl md:text-6xl text-muted-foreground">
-              Web Developer & Social Media Expert
+            <span className="text-4xl md:text-6xl text-muted-foreground min-h-[2.5em] inline-block">
+              {displayed}
+              <span className="animate-pulse">|</span>
             </span>
           </h1>
           
