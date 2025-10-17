@@ -48,8 +48,12 @@ const Navigation = () => {
       }`}>
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold gradient-text">
-              Jivan
+            <div className="flex items-center">
+              <img 
+                src="/Favicon.png" 
+                alt="Jivan Logo" 
+                className="h-10 w-10 rounded-full object-cover"
+              />
             </div>
             
             {/* Desktop Navigation */}
@@ -104,8 +108,12 @@ const Navigation = () => {
               <X size={24} />
             </button>
             
-            <div className="text-3xl font-bold gradient-text mb-8">
-              Jivan
+            <div className="flex items-center mb-8">
+              <img 
+                src="/Favicon.png" 
+                alt="Jivan Logo" 
+                className="h-16 w-16 rounded-full object-cover"
+              />
             </div>
             
             {navItems.map((item, index) => (

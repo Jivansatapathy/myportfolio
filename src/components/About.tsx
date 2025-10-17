@@ -124,7 +124,7 @@ const About = () => {
               <div className="glass rounded-full p-4 glow-blue">
                 <div className="w-80 h-80 rounded-full overflow-hidden relative">
                   <img 
-                    src="/lovable-uploads/profile.png"
+                    src="/lovable-uploads/profile.jpg"
                     alt="Jivan - Web Developer"
                     className="w-full h-full object-cover"
                   />
