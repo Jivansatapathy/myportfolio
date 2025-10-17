@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Portfolio Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Futuristic Color Palette */
+    --background: 222 84% 4%;
+    --foreground: 220 100% 98%;
+    
+    /* Neon Colors */
+    --neon-blue: 217 91% 60%;
+    --neon-purple: 271 76% 53%;
+    --neon-cyan: 189 100% 50%;
+    --neon-pink: 316 73% 52%;
+    --neon-green: 141 71% 48%;
+    
+    /* Glass Morphism */
+    --glass-bg: 220 40% 8%;
+    --glass-border: 220 60% 20%;
+    --glass-shadow: 0 8px 32px 0;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-pink)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-pink)));
+    --gradient-glow: radial-gradient(circle, hsl(var(--neon-blue) / 0.3), transparent);
+    
+    /* Shadows & Glows */
+    --glow-blue: 0 0 20px hsl(var(--neon-blue) / 0.5);
+    --glow-purple: 0 0 20px hsl(var(--neon-purple) / 0.5);
+    --glow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+    /* Component Colors */
+    --card: 220 40% 8%;
+    --card-foreground: 220 100% 98%;
+    --popover: 220 40% 8%;
+    --popover-foreground: 220 100% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 100% 98%;
+    --secondary: 220 40% 12%;
+    --secondary-foreground: 220 100% 98%;
+    --muted: 220 40% 10%;
+    --muted-foreground: 220 20% 65%;
+    --accent: 271 76% 53%;
+    --accent-foreground: 220 100% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 100% 98%;
+    --border: 220 60% 20%;
+    --input: 220 40% 12%;
+    --ring: 217 91% 60%;
+    --radius: 12px;
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  /* Force custom cursor to always show */
+  *,
+  *:hover,
+  *:active,
+  *:focus {
+    cursor: none !important;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+    background: radial-gradient(ellipse at top, hsl(var(--neon-blue) / 0.1), transparent),
+                radial-gradient(ellipse at bottom right, hsl(var(--neon-purple) / 0.1), transparent),
+                hsl(var(--background));
+  }
+  
+  /* Glass Morphism Base */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-glass);
+  }
+  
+  /* Neon Glow Effects */
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+
+  .rotate-x-6 {
+    transform: rotateX(6deg);
+  }
+
+  .transform-gpu {
+    transform: translateZ(0);
+  }
+  
+  /* Blur Effects */
+  .blur-in {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  .blur-out {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-neon {
+    @apply relative px-8 py-3 rounded-xl font-medium transition-all duration-300;
+    background: var(--gradient-primary);
+    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3);
+  }
+  
+  .btn-neon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px hsl(var(--neon-blue) / 0.4);
+  }
+  
+  .btn-secondary {
+    @apply relative px-8 py-3 rounded-xl font-medium transition-all duration-300;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-glass {
+    @apply glass px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:bg-white/10;
+  }
+  
+  /* Card Variants */
+  .card-glass {
+    @apply glass rounded-2xl p-6 transition-all duration-300 hover:transform hover:scale-105;
+  }
+  
+  .card-neon {
+    @apply relative rounded-2xl p-6 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid hsl(var(--neon-blue) / 0.3);
+  }
+  
+  .card-neon:hover {
+    box-shadow: 0 0 30px hsl(var(--neon-blue) / 0.3);
+    border-color: hsl(var(--neon-blue) / 0.6);
+  }
+  
+  /* Input Styles */
+  .input-glass {
+    @apply glass rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground;
+    transition: var(--transition-smooth);
+  }
+  
+  .input-glass:focus {
+    outline: none;
+    border-color: hsl(var(--neon-blue));
+    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--neon-blue) / 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float-social {
+  animation: float-social 3s ease-in-out infinite;
+}
+@keyframes float-social {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hover\:glow-green:hover {
+  box-shadow: 0 0 16px 0 hsl(var(--neon-green) / 0.7), 0 2px 8px 0 hsl(var(--neon-green) / 0.2);
+}
+.hover\:glow-blue:hover {
+  box-shadow: 0 0 16px 0 hsl(var(--neon-blue) / 0.7), 0 2px 8px 0 hsl(var(--neon-blue) / 0.2);
+}
+.hover\:glow-pink:hover {
+  box-shadow: 0 0 16px 0 hsl(var(--neon-pink) / 0.7), 0 2px 8px 0 hsl(var(--neon-pink) / 0.2);
+}
