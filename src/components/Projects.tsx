@@ -98,7 +98,7 @@ const Projects = () => {
       description: "IT industry solutions provider with comprehensive technology services",
       image: "/lovable-uploads/Venusglobaltech.png",
       tech: ["Next.js", "TypeScript", "Node.js", "MongoDB"],
-      live: "https://www.venusglobaltech.com/",
+      live: "https://venusglobaltech.com/",
       category: "IT Services",
       status: "Live"
     },
